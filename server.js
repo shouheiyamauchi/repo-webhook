@@ -23,7 +23,7 @@ const validateRequest = (body, headers) => {
 
 app.post('/', (req, res) => {
   if (validateRequest(req.body, req.headers) && req.body.ref === 'refs/heads/master') {
-    exec('cd ~/apps/sm-api && git pull origin master && nvm use && npm install && pm2 restart sm-api')
+    exec('./deploy.sh')
   }
 
   res.send()
