@@ -1,4 +1,5 @@
 const bodyParser = require('body-parser')
+const cors = require('cors')
 const crypto = require('crypto')
 const exec = require('child_process').exec
 const dotenv = require('dotenv')
@@ -8,6 +9,7 @@ dotenv.config()
 
 const app = express()
 
+app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
